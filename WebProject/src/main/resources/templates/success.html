@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>success!</h1>
+    <!--对于取出的数据：text不会解析标签，utext会解析标签-->
+    <div th:text="${hello}"></div>
+    <div th:utext="${hello}"></div>
+    <hr/>
+    <!--each标签表示遍历，对于users这个数组来说，其中每一个值都存到user中并每个都按照打印-->
+    <h4 th:text="user" th:each="user:${users}"></h4>
+    <hr/>
+    <h4>
+        <!--这个和上面的主要区别是这个每一个都是按照span来打印，上面是按照h4
+        -->
+        <span th:text="user" th:each="user:${users}">  </span>
+    </h4>
+</body>
+</html>
